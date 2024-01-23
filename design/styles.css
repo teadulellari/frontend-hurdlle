@@ -1,0 +1,22 @@
+
+:root {
+    --primary-pink: hsl(322, 100%, 66%);
+    --primary-light-pink: hsl(321, 100%, 78%);
+    --primary-light-red: hsl(0, 100%, 63%);
+    --neutral-dark-cyan: hsl(192, 100%, 9%);
+    --neutral-pale-blue: hsl(207, 100%, 98%);
+}
+
+html {
+    margin: 0;
+    height: 100vh;
+
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+
+}
+h1, h2{
+    font-family: 'Poppins', sans-serif;
+}
