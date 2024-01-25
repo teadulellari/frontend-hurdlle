@@ -1,180 +1,221 @@
-
 :root {
-    --primary-pink: hsl(322, 100%, 66%);
-    --primary-light-pink: hsl(321, 100%, 78%);
-    --primary-light-red: hsl(0, 100%, 63%);
-    --neutral-dark-cyan: hsl(192, 100%, 9%);
-    --neutral-pale-blue: hsl(207, 100%, 98%);
-    --text-color: gray;
-    --font-light: 400;
-    --font-medium: 600;
-    --font-heavy: 700;
+  --primary-pink: hsl(322, 100%, 66%);
+  --primary-light-pink: hsl(321, 100%, 78%);
+  --primary-light-red: hsl(0, 100%, 63%);
+  --neutral-dark-cyan: hsl(192, 100%, 9%);
+  --neutral-pale-blue: hsl(207, 100%, 98%);
+  --text-color: gray;
+  --font-light: 400;
+  --font-medium: 600;
+  --font-heavy: 700;
 }
 
 html {
-    margin: 0;
-    height: 100vh;
-
+  margin: 0;
+  height: 100vh;
 }
 
-body{
-    font-family: 'Open Sans', sans-serif;
-
+body {
+  font-family: "Open Sans", sans-serif;
 }
-h1, h2{
-    font-family: 'Poppins', sans-serif;
-   
+h1,
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: var(--font-heavy);
+  font-size: xx-large;
+  margin: 0;
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    padding: 30px;
-    font-weight:var(--font-light) ;
-    margin: 30px
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  font-weight: var(--font-light);
+  margin: 30px;
 }
 nav > :first-child {
-    width: 150px;
-    height: auto;
+  width: 150px;
+  height: auto;
 }
 button {
-    padding: 5px;
-    border: 2px solid  var(--primary-pink);
-    border-radius: 60px;
+  padding: 5px;
+  border: 2px solid var(--primary-pink);
+  border-radius: 60px;
 }
 nav > button {
-   
-    background-color: transparent;
-    color: var(--primary-pink);
-    width: 100px;
-   
+  background-color: transparent;
+  color: var(--primary-pink);
+  width: 100px;
 }
 header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin: 100px;
- 
- 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px;
+  text-align: center;
 }
 header > p {
-    width: 470px;
-    text-align: center;
-
+  width: 470px;
+  text-align: center;
 }
 
-header > button {
-    background-color: var(--primary-pink);
-    color: var(--neutral-pale-blue);
-    width: 300px;
-    height: 50px;
-    padding: 10px;
-    font-weight: var(--font-medium);
-   
+.btn {
+  background-color: var(--primary-pink);
+  color: var(--neutral-pale-blue);
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  font-weight: var(--font-medium);
 }
-header> * {
-    margin: 15px;
+header > * {
+  margin: 15px;
 }
 main {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
 }
-main> img {
-    width: 70%;
-    
+
+main > img {
+  width: 70%;
 }
 .stats {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 50px;
-    padding: 50px;
-    width: 80%;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 50px;
+  padding: 50px;
+  width: 80%;
 }
 
 .stats span {
-    font-weight: var(--font-heavy);
-    font-size: 60px;
+  font-weight: var(--font-heavy);
+  font-size: 60px;
 }
 .stats p {
-    color: var( --text-color) ;
-    font-weight: bold;
+  color: var(--text-color);
+  font-weight: bold;
 }
- .colored-icon path {
-    stroke:var(--primary-pink);
-  }
+.colored-icon path {
+  stroke: var(--primary-pink);
+}
 
 .mini-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .grid {
-    display: grid;
-    grid-template-areas: 
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
     "one two"
     "three four"
     "five six";
-    width: 80%;
-    grid-row-gap: 10rem;
-    grid-column-gap: 2rem;
-    align-items: center;
-    position: relative;
-  
-    margin-bottom:200px;
 
+  grid-row-gap: 10rem;
+  grid-column-gap: 2rem;
+  align-items: center;
+  position: relative;
+  text-align: start;
+  margin-bottom: 200px;
+  width: 85%;
 }
-
-.grid::before,
-.grid::after {
-    content: "";
-    position: absolute;
-    width: 900px;
-    height: 50%; 
-    background-size: cover;
-    z-index: -1;
-    text-align: center;
-}
-
-.grid::before {
-    top: 0;
-    left: 0;
-    background-image: url('./images/bg-section-top-desktop-1.svg');
-    height: 165px;
-    background-size: 100%
-}
-
-.grid::after {
-     top:0;
-    left: 0;
-    background-image: url('./images/bg-section-bottom-mobile-1.svg');
-    height: 139px;
-    background-size: 100%
+main > p {
+  font-size: 8px;
 }
 .grid img {
-   max-width: 100%;
+  max-width: 80%;
 }
 .one {
-    grid-area: one;
-    position: relative;
+  grid-area: one;
+  position: relative;
 }
 .two {
-    grid-area: two;
+  grid-area: two;
 }
 .three {
-    grid-area: three;
+  grid-area: three;
 }
 .four {
-    grid-area: four;
+  grid-area: four;
 }
 .five {
-    grid-area: five;
+  grid-area: five;
 }
 .six {
-    grid-area: six;
+  grid-area: six;
+}
+.btn-2 {
+  width: 250px;
+  margin-top: 25px;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: flex-start;
+  align-items: start;
+
+  padding: 150px;
+  padding-bottom: 0;
+}
+.footer-logo {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer-logo-svg {
+  stroke: white;
+  fill: var(--neutral-dark-cyan);
+}
+.socials img {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+}
+.socials {
+  margin: 50px 0 50px 0;
 }
 
+footer  p {
+  font-size: var(--font-light);
+  width: 70%;
 
+}
+.one {
+  padding-right: 200px;
+}
+.two > span {
+  font-size: 20px;
+  font-weight: var(--font-heavy);
+}
+.sub {
+ display: flex;
+ flex-direction: row;
+ align-items: flex-start;
+ justify-content: space-between;
+  height: 40px;
+  width: 80%;
+
+
+ 
+}
+.sub button {
+  border-radius: 5px;
+ width: 25%;
+  height: 40px;
+ 
+}
+.sub textarea {
+  width:  50%;
+  border-radius: 5px;
+ width: 70%;
+
+  
+}
