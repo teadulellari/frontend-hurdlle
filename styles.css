@@ -152,70 +152,90 @@ main > p {
   width: 250px;
   margin-top: 25px;
 }
-footer {
+.footer-style {
   display: flex;
   flex-direction: row;
-
   justify-content: flex-start;
   align-items: start;
-
-  padding: 150px;
+  padding: 80px;
   padding-bottom: 0;
+  color: var(--neutral-pale-blue);
+  position: relative;
+  background-color: var(--neutral-dark-cyan);
 }
+
 .footer-logo {
-  color: white;
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+ width: 200px;
+ height: 40px;
 }
+
 .footer-logo-svg {
   stroke: white;
-  fill: var(--neutral-dark-cyan);
+  height: auto;
 }
+
 .socials img {
   width: 20px;
   height: 20px;
   padding: 10px;
-}
-.socials {
-  margin: 50px 0 50px 0;
+  fill: white;
+  stroke: white;
 }
 
-footer  p {
-  font-size: var(--font-light);
+footer p {
+  font-size: 12px;
   width: 70%;
+}
 
+.footer-one {
+  padding-right: 100px;
 }
-.one {
-  padding-right: 200px;
-}
-.two > span {
+
+.footer-two > span {
   font-size: 20px;
   font-weight: var(--font-heavy);
 }
+
 .sub {
- display: flex;
- flex-direction: row;
- align-items: flex-start;
- justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
   height: 40px;
-  width: 80%;
-
-
- 
 }
+
 .sub button {
   border-radius: 5px;
- width: 25%;
+  width: 25%;
   height: 40px;
+}
+
+.sub textarea {
+  width: 50%;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.footer-wave {
+ margin-bottom: -15px;
+  width: 100%;
+  overflow: hidden;
  
 }
-.sub textarea {
-  width:  50%;
-  border-radius: 5px;
- width: 70%;
 
-  
+.footer-wave svg {
+  position: relative;
+  display: block;
+  height: 262px;
+  fill: hsl(240, 3%, 6%);
+
+}
+
+.grid-wave-up {
+  margin-bottom: -15px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  height: 262px;
 }
