@@ -4,20 +4,23 @@
   --primary-light-red: hsl(0, 100%, 63%);
   --neutral-dark-cyan: hsl(192, 100%, 9%);
   --neutral-pale-blue: hsl(207, 100%, 98%);
+  --wave-background: hsl(207, 100%, 98%);
   --text-color: gray;
   --font-light: 400;
   --font-medium: 600;
   --font-heavy: 700;
 }
 
-html {
-  margin: 0;
-  height: 100vh;
-}
 
 body {
+  margin:0;
   font-family: "Open Sans", sans-serif;
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  
 }
+
 h1,
 h2 {
   font-family: "Poppins", sans-serif;
@@ -32,29 +35,35 @@ nav {
   padding: 30px;
   font-weight: var(--font-light);
   margin: 30px;
+  align-items: center;
 }
+
 nav > :first-child {
   width: 150px;
   height: auto;
 }
+
 button {
   padding: 5px;
   border: 2px solid var(--primary-pink);
   border-radius: 60px;
 }
+
 nav > button {
   background-color: transparent;
   color: var(--primary-pink);
   width: 100px;
 }
+
 header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 100px;
+  margin: 100px 0 100px 0;
   text-align: center;
 }
+
 header > p {
   width: 470px;
   text-align: center;
@@ -68,9 +77,11 @@ header > p {
   padding: 10px;
   font-weight: var(--font-medium);
 }
+
 header > * {
   margin: 15px;
 }
+
 main {
   text-align: center;
   display: flex;
@@ -82,6 +93,7 @@ main {
 main > img {
   width: 70%;
 }
+
 .stats {
   display: flex;
   flex-direction: row;
@@ -89,16 +101,19 @@ main > img {
   margin: 50px;
   padding: 50px;
   width: 80%;
+  gap: 30px;
 }
 
 .stats span {
   font-weight: var(--font-heavy);
   font-size: 60px;
 }
+
 .stats p {
   color: var(--text-color);
   font-weight: bold;
 }
+
 .colored-icon path {
   stroke: var(--primary-pink);
 }
@@ -107,51 +122,69 @@ main > img {
   display: flex;
   flex-direction: column;
 }
+
 .grid {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-areas:
-    "one two"
-    "three four"
-    "five six";
-
+  grid-template-areas: 
+      "one"
+      "two"
+      "three";
   grid-row-gap: 10rem;
-  grid-column-gap: 2rem;
   align-items: center;
-  position: relative;
   text-align: start;
   margin-bottom: 200px;
-  width: 85%;
 }
+
+
+.inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-content: space-around;
+  column-gap: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+
+}
+/* the second row, swap the places of the inner grid cells */
+.grid > div:nth-child(2) .inner-grid > div:nth-child(1) {
+  order: 2;
+}
+
+.grid > div:nth-child(2) .inner-grid > div:nth-child(2) {
+  order: 1;
+}
+
 main > p {
   font-size: 8px;
 }
-.grid img {
+
+.inner-grid img {
   max-width: 80%;
 }
-.one {
-  grid-area: one;
+.wave {
+  margin-bottom: -15px;
+  width: 100%;
+  overflow: hidden;
+}
+.wave svg {
   position: relative;
+  display: block;
+  height: 262px;
+  fill: hsl(240, 3%, 6%);
 }
-.two {
-  grid-area: two;
+
+.grid .one,
+.grid .three {
+  background-color: var(--wave-background);
 }
-.three {
-  grid-area: three;
-}
-.four {
-  grid-area: four;
-}
-.five {
-  grid-area: five;
-}
-.six {
-  grid-area: six;
-}
+
 .btn-2 {
   width: 250px;
   margin-top: 25px;
 }
+
 .footer-style {
   display: flex;
   flex-direction: row;
@@ -165,8 +198,8 @@ main > p {
 }
 
 .footer-logo {
- width: 200px;
- height: 40px;
+  width: 200px;
+  height: 40px;
 }
 
 .footer-logo-svg {
@@ -214,13 +247,13 @@ footer p {
   width: 50%;
   border-radius: 5px;
   width: 70%;
+  height: 40px;
 }
 
 .footer-wave {
- margin-bottom: -15px;
+  margin-bottom: -15px;
   width: 100%;
   overflow: hidden;
- 
 }
 
 .footer-wave svg {
@@ -228,7 +261,6 @@ footer p {
   display: block;
   height: 262px;
   fill: hsl(240, 3%, 6%);
-
 }
 
 .grid-wave-up {
@@ -238,4 +270,123 @@ footer p {
   position: relative;
   display: block;
   height: 262px;
+}
+
+
+
+
+/* mobile responsiveness */
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align: center;
+  }
+  nav {
+    padding: 30px;
+    margin: 10px;
+  }
+  nav > :first-child {
+    width: 100px;
+    height: 20px;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+   
+    text-align: center;
+  }
+  
+  header > p {
+    width: 80%;
+    text-align: center;
+  }
+  .grid {
+    text-align: center;
+    gap:50px;
+  }
+
+  .inner-grid {
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    gap: 50px; 
+    padding: 0 30px; 
+  }
+    /* Mobile view: Swap the order of columns in the inner-grid */
+    .grid > div:nth-child(1) .inner-grid > div:nth-child(1) {
+      order: 2;
+    }
+    
+    .grid > div:nth-child(1) .inner-grid > div:nth-child(2) {
+      order: 1;
+    }
+    .grid > div:nth-child(3) .inner-grid > div:nth-child(1) {
+      order: 2;
+    }
+    
+    .grid > div:nth-child(3) .inner-grid > div:nth-child(2) {
+      order: 1;
+    }
+ 
+
+  .footer-style {
+    flex-direction: column-reverse;
+    justify-content:center;
+    align-items: center;
+    padding: 40px;
+    text-align: start;
+    color: var(--neutral-pale-blue);
+    background-color: var(--neutral-dark-cyan);
+    gap: 40px;
+  }
+  .stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+    padding: 50px;
+    width: 80%;
+  }
+  main > p {
+    font-size: 12px; 
+  }
+  .footer-logo {
+    width: 100px;
+    height: 40px;
+  }
+  .sub {
+    display: flex;
+    flex-direction: column;
+   flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+  }
+  footer p {
+    font-size: 12px;
+    width: 100%;
+  }
+  
+  .footer-one {
+    padding-right: 0px;
+  }
+  
+  .footer-two > span {
+    font-size: 20px;
+    font-weight: var(--font-heavy);
+  }
+  .sub textarea {
+    width: 100%;
+    border-radius: 5px;
+    
+  }
+  .sub button {
+    align-self: flex-end;
+  }
 }
