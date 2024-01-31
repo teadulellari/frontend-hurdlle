@@ -234,20 +234,20 @@ footer p {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  height: 40px;
+  height: fit-content;
 }
 
 .sub button {
   border-radius: 5px;
   width: 25%;
-  height: 40px;
+  height: auto;
+  
 }
 
 .sub textarea {
-  width: 50%;
   border-radius: 5px;
   width: 70%;
-  height: 40px;
+  height: 100%;
 }
 
 .footer-wave {
