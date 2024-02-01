@@ -10,15 +10,19 @@
   --font-medium: 600;
   --font-heavy: 700;
 }
-
+html{
+  width: 100%;
+  height: 100%;
+}
 
 body {
-  margin:0;
   font-family: "Open Sans", sans-serif;
-  margin: 0;
   min-height: 100%;
-  width: 100%;
-  
+  overflow-x: hidden;
+}
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -87,6 +91,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   margin-bottom: 100px;
 }
 
@@ -133,6 +138,7 @@ main > img {
   align-items: center;
   text-align: start;
   margin-bottom: 200px;
+
 }
 
 
@@ -195,6 +201,8 @@ main > p {
   color: var(--neutral-pale-blue);
   position: relative;
   background-color: var(--neutral-dark-cyan);
+  width:100%;
+  box-sizing: border-box;
 }
 
 .footer-logo {
@@ -253,7 +261,7 @@ footer p {
 .footer-wave {
   margin-bottom: -15px;
   width: 100%;
-  overflow: hidden;
+ overflow: hidden;
 }
 
 .footer-wave svg {
@@ -282,6 +290,8 @@ footer p {
     padding: 0;
     display: block;
     text-align: center;
+    width: 100%;
+    overflow-x: hidden;
   }
   nav {
     padding: 30px;
@@ -296,7 +306,6 @@ footer p {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-   
     text-align: center;
   }
   
@@ -307,6 +316,7 @@ footer p {
   .grid {
     text-align: center;
     gap:50px;
+   
   }
 
   .inner-grid {
@@ -342,6 +352,8 @@ footer p {
     color: var(--neutral-pale-blue);
     background-color: var(--neutral-dark-cyan);
     gap: 40px;
+    box-sizing: border-box;
+    width: 100%;
   }
   .stats {
     display: flex;
@@ -362,7 +374,6 @@ footer p {
   .sub {
     display: flex;
     flex-direction: column;
-   flex-wrap: wrap;
     align-items:flex-start;
     justify-content: space-between;
     height: 100px;
@@ -382,11 +393,32 @@ footer p {
     font-weight: var(--font-heavy);
   }
   .sub textarea {
+    height: 40px;
     width: 100%;
-    border-radius: 5px;
     
   }
   .sub button {
     align-self: flex-end;
+    width: 40%;
+  }
+  .footer-wave img {
+    content: url('./images/bg-footer-top-mobile.svg');
+    width: 100%;
+  }
+  .grid .wave-1{
+    content: url('./images/bg-section-top-desktop-1.svg');
+    width: 100%;
+  }
+  .grid .wave-2{
+    content: url('./images/bg-section-bottom-desktop-1.svg');
+    width: 100%;
+  }
+  .grid .wave-3{
+    content: url('./images/bg-section-top-desktop-2.svg');
+    width: 100%;
+  }
+  .grid .wave-4{
+    content: url('./images/bg-section-bottom-desktop-2.svg');
+    width: 100%;
   }
 }
